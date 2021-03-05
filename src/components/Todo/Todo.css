@@ -7,14 +7,19 @@
 }
 
 .Todo h1 {
-  font-size: 16px;
+  font-size: 24px;
   margin: 0;
   font-weight: normal;
 }
 
-.Todo p {
+.Todo .date-string {
   color: #999;
   margin: 5px 0;
+}
+
+.Todo .really-delete {
+  margin: 0 0 5px 0;
+  color: red;
 }
 
 .Todo .ion-item {

@@ -1,6 +1,10 @@
 import firebase from 'firebase/app';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 
+import './TodoList.css';
+
+import { IonSpinner } from '@ionic/react';
+
 import Todo from '../Todo/Todo';
 
 // TodoList component
@@ -12,10 +16,18 @@ function TodoList() {
   .where('uid', '==', uid).orderBy('createdAt', 'desc');
   const [todos] = useCollectionData(query, {idField: 'id'});
 
+  if (!todos) {
+    return (
+      <div className="TodoList">
+        <IonSpinner className="spinner" />
+      </div>
+    );
+  }
+
   return (
     <div className="TodoList">
       {
-        todos?.map(t => <Todo key={t.id} data={t} />)
+        todos.map(t => <Todo key={t.id} data={t} />)
       }
     </div>
   )

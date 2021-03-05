@@ -11,6 +11,7 @@ function Todo(props) {
   const date = createdAt.toDate();
 
   const [todoComplete, setTodoComplete] = useState(complete);
+  const [deleting, setDeleting] = useState(false);
 
   // deletes todo from firebase
   async function deleteToDo() {
@@ -28,12 +29,20 @@ function Todo(props) {
   return (
     <div className="Todo">
       <h1>{text}</h1>
-      <p>{date.toDateString() + ', ' + date.toLocaleTimeString()}</p>
+      <p className="date-string">{date.toDateString() + ', ' + date.toLocaleTimeString()}</p>
       <IonItem className="ion-item">
         <IonLabel>Completed</IonLabel>
         <IonCheckbox checked={todoComplete} onIonChange={updateComplete} />
       </IonItem>
-      <IonButton onClick={deleteToDo}>Delete To Do</IonButton>
+      {
+        deleting ?
+        <>
+          <p className="really-delete">Delete permanently?</p>
+          <IonButton onClick={() => setDeleting(false)}>Cancel</IonButton>
+          <IonButton color="danger" onClick={deleteToDo}>Delete</IonButton>
+        </> :
+        <IonButton color="danger" onClick={() => setDeleting(true)}>Delete</IonButton>
+      }
     </div>
   )
 }
