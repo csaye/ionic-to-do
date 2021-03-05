@@ -1,0 +1,11 @@
+.SignOut .auth-items {
+  display: flex;
+}
+
+.SignOut p {
+  margin: auto 0;
+}
+
+.SignOut .ion-button {
+  margin: 0 10px;
+}
