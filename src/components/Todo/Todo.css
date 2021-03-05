@@ -16,3 +16,9 @@
   color: #999;
   margin: 5px 0;
 }
+
+.Todo .ion-item {
+  width: 50%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
