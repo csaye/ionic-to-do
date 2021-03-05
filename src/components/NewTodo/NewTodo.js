@@ -5,8 +5,8 @@ import { IonButton, IonInput } from '@ionic/react';
 
 import firebase from 'firebase/app';
 
+// NewTodo component
 function NewTodo() {
-
   const [text, setText] = useState('');
 
   async function createToDo(e) {
@@ -14,7 +14,8 @@ function NewTodo() {
     const toDoText = text;
     setText('');
     await firebase.firestore().collection('todos').add({
-      text: toDoText
+      text: toDoText,
+      createdAt: new Date()
     });
   }
 

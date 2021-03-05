@@ -1,0 +1,12 @@
+.Todo {
+  background: #efefef;
+  text-align: center;
+  margin: 20px 0;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.Todo p {
+  font-size: 16px;
+  margin: 0;
+}
