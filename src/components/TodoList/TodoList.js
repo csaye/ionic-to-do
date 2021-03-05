@@ -5,7 +5,11 @@ import Todo from '../Todo/Todo';
 
 // TodoList component
 function TodoList() {
-  const query = firebase.firestore().collection('todos').orderBy('createdAt', 'desc');
+  const uid = firebase.auth().currentUser.uid;
+
+  // get todos from user ordered by date
+  const query = firebase.firestore().collection('todos')
+  .where('uid', '==', uid).orderBy('createdAt', 'desc');
   const [todos] = useCollectionData(query, {idField: 'id'});
 
   return (

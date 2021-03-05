@@ -15,7 +15,8 @@ function NewTodo() {
     setText('');
     await firebase.firestore().collection('todos').add({
       text: toDoText,
-      createdAt: new Date()
+      createdAt: new Date(),
+      uid: firebase.auth().currentUser.uid
     });
   }
 

@@ -5,7 +5,8 @@ import firebase from 'firebase/app';
 
 // Todo component
 function Todo(props) {
-  const { text, id } = props.data;
+  const { text, createdAt, id } = props.data;
+  const date = createdAt.toDate();
 
   // deletes todo from firebase
   async function deleteToDo() {
@@ -14,7 +15,8 @@ function Todo(props) {
 
   return (
     <div className="Todo">
-      <p>{text}</p>
+      <h1>{text}</h1>
+      <p>{date.toDateString() + ', ' + date.toLocaleTimeString()}</p>
       <IonButton onClick={deleteToDo}>Delete To Do</IonButton>
     </div>
   )
