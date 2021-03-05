@@ -1,13 +1,22 @@
-.container {
+.App {
   text-align: center;
   background: #efefef;
   border-radius: 10px;
   margin: 0;
+  overflow: auto;
 }
 
-.text-input {
+.App h1 {
+  margin: 10px 0;
+}
+
+.App .text-input {
   background: #bbb;
   border-radius: 10px;
   width: 50%;
   margin: 0 auto;
+}
+
+.App .submit-button {
+  margin: 10px 0;
 }
