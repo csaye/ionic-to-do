@@ -1,0 +1,23 @@
+.NewTodo {
+  text-align: center;
+  background: #efefef;
+  border-radius: 10px;
+  width: 80%;
+  margin: 100px auto;
+  overflow: auto;
+}
+
+.NewTodo h1 {
+  margin: 10px 0;
+}
+
+.NewTodo .text-input {
+  background: #bbb;
+  border-radius: 10px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.NewTodo .submit-button {
+  margin: 10px 0;
+}
